@@ -664,9 +664,19 @@ h2 {
   padding: 58px 10%;
   position: relative;
   overflow: hidden;
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  align-items: start;
+  gap: 8%;
   border-radius: 18px;
   background: var(--deep-green);
   color: var(--paper);
+}
+
+.contact-copy,
+.contact-form {
+  position: relative;
+  z-index: 1;
 }
 
 .contact-card .section-kicker {
@@ -686,7 +696,7 @@ h2 {
   color: #f1ad83;
 }
 
-.contact-card > p:not(.contact-name) {
+.contact-copy > p {
   max-width: 475px;
   margin-bottom: 1.8rem;
   color: #d2ddd3;
@@ -694,17 +704,88 @@ h2 {
   line-height: 1.8;
 }
 
-.contact-name {
-  margin: 0;
-  padding-top: 1rem;
-  border-top: 1px solid rgb(255 255 255 / 20%);
-  color: #d2ddd3;
+.contact-copy .contact-email {
+  margin-bottom: 0;
   font-size: .78rem;
 }
 
-.contact-name strong {
-  margin-left: .5rem;
+.contact-email a {
+  color: #f1ad83;
+  overflow-wrap: anywhere;
+}
+
+.contact-form {
+  display: grid;
+  gap: 16px;
+}
+
+.form-field {
+  display: grid;
+  gap: 7px;
+}
+
+.form-field label {
+  color: #f3ede2;
+  font-size: .76rem;
+  font-weight: 600;
+}
+
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  min-height: 46px;
+  padding: 12px 14px;
+  border: 1px solid rgb(255 255 255 / 26%);
+  border-radius: 8px;
+  background: rgb(255 255 255 / 8%);
   color: white;
+  font: inherit;
+  font-size: .85rem;
+}
+
+.form-field textarea {
+  min-height: 115px;
+  resize: vertical;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  outline: 2px solid #f1ad83;
+  outline-offset: 2px;
+}
+
+.form-submit {
+  min-height: 48px;
+  padding: 0 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  justify-self: start;
+  border: 0;
+  border-radius: 99px;
+  background: #f1ad83;
+  color: var(--ink);
+  cursor: pointer;
+  font: inherit;
+  font-size: .8rem;
+  font-weight: 700;
+}
+
+.form-submit:hover {
+  background: #f7c5a4;
+}
+
+.form-submit:focus-visible {
+  outline: 3px solid white;
+  outline-offset: 3px;
+}
+
+.form-note {
+  margin: -7px 0 0;
+  color: #d2ddd3;
+  font-size: .7rem;
+  line-height: 1.6;
 }
 
 .contact-decoration {
@@ -886,6 +967,8 @@ h2 {
 
   .contact-card {
     padding: 42px 8%;
+    grid-template-columns: 1fr;
+    gap: 32px;
   }
 
   .contact-decoration {
