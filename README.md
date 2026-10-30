@@ -2,6 +2,8 @@
 
 A small, responsive information site about Cascais, Portugal. It uses plain HTML and CSS, so there is no build step or package installation.
 
+The header language switch displays the site in English or Portuguese (Portugal).
+
 ## Preview locally
 
 Open `index.html` in a browser.
